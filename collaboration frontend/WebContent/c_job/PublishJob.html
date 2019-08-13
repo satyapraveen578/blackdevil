@@ -1,0 +1,52 @@
+<div ng-controller="JobController">
+
+<div class="container">
+<div class="row">
+
+<div class="col-md-5 mx-auto">
+<div id="first"></div>
+</div>
+<div id="second">
+<div class="myform form ">
+<div class="logo mb-3">
+<div class="col-md-12 text-center">
+<h1>Update Job</h1>
+</div>
+
+<div class="form-group">
+<label for="exampleInputEmail">Designation</label> <input type="text" name="designation" class="form-control" id="username" ng-model="job.designation"
+aria-describedby="emailHelp" placeholders="Enter Job Designation">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Job Description</label> <input type="text" name="jobdesc" class="form-control" id="password" ng-model="job.description"
+aria-describedby="emailHelp" placeholders="Enter Job Description">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Company Name</label> <input type="text" name="custname" class="form-control" ng-model="job.companyName"
+aria-describedby="emailHelp" placeholders="Enter Company Name">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Location</label> <input type="mobile" class="form-control" ng-model="job.location"
+aria-describedby="emailHelp" placeholders="Enter Job Location">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">CTC</label> <input type="text" name="lastDate" id="em ng-model="job.ctc"
+aria-describedby="emailHelp" placeholders="Enter CTC">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Last Date</label> <input type="date" name="lastDate" class="form-control" ng-model="job.lastdateforApply"
+aria-describedby="emailHelp"/>
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Skills</label> <input type="text" name="skills" ng-model="job.skills"
+aria-describedby="emailHelp"/>
+</div>
+<div class="col-md-12 text-center mb-3 ">
+<input type="button" class="btn btn-block mybtn btn-primary tx-tfm" ng-click="publishJob()" value="Publish Job"> 
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

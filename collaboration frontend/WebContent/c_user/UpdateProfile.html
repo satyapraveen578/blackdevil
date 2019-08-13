@@ -1,0 +1,40 @@
+<div ng-controller="UserController">
+
+<div class="container">
+<div class="row">
+
+({userDetail.username})
+<div class="col-md-5 mx-auto">
+<div id="first"></div>
+</div>
+<div id="second">
+<div class="myform form ">
+<div class="logo mb-3">
+<div class="col-md-12 text-center">
+<h1>Update Profile</h1>
+</div>
+
+<div class="form-group">
+<label for="exampleInputEmail">User Name</label> <input type="text" name="username" class="form-control" id="username" ng-model="userDetail.username"
+aria-describedby="emailHelp" readonly>
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Password</label> <input type="password" name="password" class="form-control" id="password" ng-model="userDetail.password"
+aria-describedby="emailHelp" placeholders="Enter Password">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Customer Name</label> <input type="text" name="custname" class="form-control" id="custname" ng-model="userDetail.custname"
+aria-describedby="emailHelp" placeholders="Enter Customer Name">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Email Address</label> <input type="email" class="form-control" ng-model="userDetail.emailId"
+aria-describedby="emailHelp" placeholders="Enter email">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Mobile No</label> <input type="mobile" name="mobile" class="form-control" id="email" ng-model="userDetail.mobileNo"
+aria-describedby="emailHelp" placeholders="Enter Mobile #">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail">Address</label> 
+<textarea aria-describedby="emailHelp" cols="60" rows="5" name="address" id="address" ng-model="userDetail.address"> </textarea>
+</div>

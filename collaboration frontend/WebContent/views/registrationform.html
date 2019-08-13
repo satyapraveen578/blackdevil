@@ -1,0 +1,114 @@
+<html>
+<head>
+
+
+  
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+body{
+      background-image: url(https://tgff.org/wp-content/uploads/2016/08/898738-dandelions-depth-of-field-flowers-grass-macro-nature.jpg);
+      background-position: center; /* Center the image */
+     
+}
+#ui{
+     background-color:#00000080;
+     padding:30px;
+     margin-top:30px;
+     border-radius: 25px;
+}
+#ui label{
+   color:#fff;
+}
+ 
+ 
+</style>
+</head>
+
+<body>
+	<div class="container"></div>
+	<div class="row"></div>
+	<div class="col-lg-3"></div>
+	<div class="col-lg-6">
+	<div id="ui">
+	<form class="form-group text-center">
+	<div class="row ">
+		<div class="col-lg-6">
+			<label>Enter First Name</label>
+		
+
+			
+            <input type="text" ng-model="user.firstname" class="form-control"placeholder="Enter your FirstName">
+			
+		</div>
+		
+
+		<div class="col-lg-6">
+			
+			<label>Enter Last Name</label>
+			<input type="text" ng-model="user.lastname" class="form-control"placeholder="Enter your LastName">
+			
+		</div>
+	</div>
+	
+<span style="color:red" ng-if="error.code==2">{{error.message}}</span>
+<!-- {2,"Email Id already exists.. please enter different email address} -->
+<br>
+	<label>E-mail</label>
+	
+	<input type="email" ng-model="user.email" class="form-control"placeholder="Enter your Email Id">
+	
+<br>
+		<div class="col-lg-6">
+			<label>Password</label>
+            <input type="password" ng-model="user.password" class="form-control"placeholder="Enter your Password">
+			
+		</div>
+		
+		
+		<div class="col-lg-6">
+				<div class="cols-sm-6"></div>
+			
+			<label>Enter Phone Number</label>
+			<input type="text" ng-model="user.phonenumber" class="form-control"placeholder="Enter your Phone Number">
+			</div>
+		
+		<br>
+		
+			
+                        <div class="form-group">
+							<label for="gender"> Gender</label>
+							<select id="gender" class="form-control" name="gender">
+								<option value="Select Gender...">select Gender,,,</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="other">Other</option>
+							</select></div>
+    <br>
+    
+	
+ 
+  <label>Select Role</label>
+      
+<input type="radio"ng-model="user.role" value="STUDENT"> <label>STUDENT </label>
+<input type="radio" ng-model="user.role" value="ALUMNI"><label>ALUMNI</label>
+<input type="radio" ng-model="user.role" value="EMPLOYEE"><label> EMPLOYEE</label>
+
+
+<input type="submit" ng-click="register()" value="Register" class="btn btn-primary btn-block btn-lg">
+ <br>        
+	
+	</form>
+	
+	<div class="col-lg-3">
+	</div>
+	</div>
+	</div>
+	</body>
+	</html>
+	

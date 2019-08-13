@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="RouteConfig.js"></script>
+<script src="c_user/UserController.js"></script>
+<script src="c_blog/BlogController.js"></script>
+<script src="c_blog/BlogCommentController.js"></script>
+<script src="c_friend/FriendController.js"></script>
+<script src="c_job/JobController.js"></script>
+<script src="c_chat/ChatController.js"></script>
+<script src="c_chat/ChatService.js"></script>
+
+<meta name="viewport" content="width=device=width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.3/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js"></script>
+
+</head>
+<body ng-app="myApp">
+
+<div class="container">
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+<a class="navbar-brand" href="#">Collaboration</a>
+</div>
+<ul class="nav navbar-nav">
+<li><a class="active"><a href="#">Home</a>
+<li><a href="#!login" ng-show="currentUser==undefined">Login</a></li>
+<li><a href="#!register" ng-show="currentUser==undefined">Register</a></li>
+<li><a href="#!aboutus" ng-show="currentUser==undefined">About Us</a></li>
+<li><a href="#!contactus" ng-show="currentUser==undefined">Contact Us</a></li>
+
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Blog<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a class="nav-link" href="#!addBlog" ng-show="currentUser.role--'ROLE_USER'">Add Blog</a>
+<li><a class="nav-link" href="#!manageBlog" ng-show="currentUser.role--'ROLE_ADMIN'">Manage Blog</a>
+<li><a class="nav-link" href="#!showBlog">Show Blog</a>
+</li>
+</ul>
+
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Job<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a class="nav-link" href="#!addJob" ng-show="currentUser.role--'ROLE_ADMIN'">Publish Job</a>
+<li><a class="nav-link" href="#!showJobs">Show Jobs</a>
+</li>
+</ul>
+
+<li ng-hide="currentUser==undefined"><a href="#!Friends">Friend</a>
+<li ng-hide="currentUser==undefined"><span ng-controller="UserController"></span><a href="#" ng-click=editUser()">Profile Update</a>
+<li ng-hide="currentUser==undefined"><a href="#!Chat">Friend</a>
+</li>
+</a>
+<div class="nav navbar-nav navbar-right" ng-hide="currentUser==undefined">
+<font color="white" face="calibri" size="3">
+Welcome 
+<img src="" width="20" height="20"/>
+({currentUser.name})
+</font>
+<span ng-controller="UserController">
+<a href="" ng-click="logout()"><span class="glyphicon glyphicon-logout"></span></a> 
+</span>
+ </div> 
+</nav>
+<div ng-view></div>
+</body>
+</html>
