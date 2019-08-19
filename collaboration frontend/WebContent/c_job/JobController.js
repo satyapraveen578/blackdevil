@@ -9,7 +9,7 @@ $scope.publishJob=function()
  console.log('Iam in publishJob Function');
  console.log($scope.job);
  
- $http.post('http://localhost:8036/EduCollaborationMiddleware/addJob',$scope.job)
+ $http.post('http://localhost:8036/middleware/addJob',$scope.job)
  .then(function(response)
 		 {
 	 alert("Job Posted");
@@ -22,7 +22,7 @@ $scope.publishJob=function()
 function showJobs()
 {
  console.log('I am in ShowJobs');
- $http.get('http://localhost:8036/EduCollaborationMiddleware/showAllJobs')
+ $http.get('http://localhost:8036/middleware/showAllJobs')
  .then(function(response)
 		 {
 	 $scope.jobs=response.data;

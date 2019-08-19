@@ -15,7 +15,7 @@ $scope.addBlog=function()
    
    $scope.blog.username=$rootScope.currentUser.username;
    
-   $http.post('http://localhost:8036/EduCollaborationMiddleware/addBlog',$scope.blog)
+   $http.post('http://localhost:8036/middleware/addBlog',$scope.blog)
    .then(function(response){
 	   alert("Blog Added");
 	   showAllBlogs();
@@ -37,7 +37,7 @@ console.og('Iam in Update Blog');
 
 $rootScope.blog1.username=$rootScope.currentUser.username;
 
-$http.post('http://localhost:8036/EduCollaborationMiddleware/updateBlog',$rootScope.blog1)
+$http.post('http://localhost:8036/middleware/updateBlog',$rootScope.blog1)
 .then(function(response){
 	alert("Blog Updated");
 $location.path("/showBlog");
@@ -50,7 +50,7 @@ $scope.incrementLikes=function(blogId)
 {
     console.log('Iam in Increment Likes');
     
-    $http.get('http://localhost:8036/EduCollaborationMiddleware/incrementLikes/'+blogId)
+    $http.get('http://localhost:8036/middleware/incrementLikes/'+blogId)
     .then(function(response)
      {
     	alert("-Thank You for Liking the Blog!!!");
@@ -65,7 +65,7 @@ $scope.incrementDislikes=function(blogId)
 {
   console.log('Iam in Increment Likes');
   
-  $http.get('http://localhost:8036/EduCollaborationMiddleware/incrementDislikes/'+blogId)
+  $http.get('http://localhost:8036/middleware/incrementDislikes/'+blogId)
   .then(function(response)
 		  {
 	  alert("-oops we will try to Improve.Thanksfor Feedback!!!");
@@ -81,7 +81,7 @@ $scope.incrementDislikes=function(blogId)
  {
 	 console.log('Iam in show All Blogs');
 	 
-	 $http.get('http://localhost:8036/EduCollaborationMiddleware/showAllBlogs')
+	 $http.get('http://localhost:8036/middleware/showAllBlogs')
 	 .then(function(response){
 		 $scope.blogDetail=response.data;
 	 },function(errorresponse){

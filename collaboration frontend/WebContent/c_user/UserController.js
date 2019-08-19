@@ -9,7 +9,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope)
     	   console.log('I am in Register Function');
     	   console.log($scope.userDetail);
     	   
-    	   $http.post('http://localhost:8036/EduCollaborationMiddleware/addUser',$scope.userDetail)
+    	   $http.post('http://localhost:8036/middleware/addUser',$scope.userDetail)
     	   .then(function(response){
     		   alert("User Added");
     	   },function(errorresponse){
@@ -22,7 +22,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope)
     	  console.log('I am in checkUser Function');
     	  console.log($scope.userDetail);
     	  
-    	  $http.post('http://localhost:8036/EduCollaborationMiddleware/checkUser',$scope.userDetail)
+    	  $http.post('http://localhost:8036/middleware/checkUser',$scope.userDetail)
     	  .then(function(response)
     	  {
     		  $rootScope.currentUser=response.data;
@@ -37,7 +37,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope)
       {
     	  console.log('I am in editUser Function');
        	  
-    	  $http.post('http://localhost:8036/EduCollaborationMiddleware/getUser/',$rootScope.currentUser.username)
+    	  $http.post('http://localhost:8036/middleware/getUser/',$rootScope.currentUser.username)
     	  .then(function(response)
     	  {
     		  $rootScope.userDetail=response.data;
@@ -53,7 +53,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope)
       {
     	  console.log('I am in Update Profile Function');
        	  
-    	  $http.post('http://localhost:8036/EduCollaborationMiddleware/updateUser',$rootScope.userDetail)
+    	  $http.post('http://localhost:8036/middleware/updateUser',$rootScope.userDetail)
     	  .then(function(response)
     	  {
     		  alert(response.data); 		  

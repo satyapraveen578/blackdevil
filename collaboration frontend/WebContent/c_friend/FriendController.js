@@ -12,7 +12,7 @@ function showFriendList()
 {
 	console.log('I am in FriendList');
 	
-	$http.get('https://localhost:8036/EduCollbarationMiddleware/showFriendList/'+$rootScope.currentUser.username)
+	$http.get('https://localhost:8036/middleware/showFriendList/'+$rootScope.currentUser.username)
 	.then(function(response){
 		$scope.friendList=response.data;
 	},function(errorresponse){
