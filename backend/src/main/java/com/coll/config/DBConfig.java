@@ -46,7 +46,7 @@ public class DBConfig {
 	public DataSource getDataSource() {
 	    BasicDataSource dataSource = new BasicDataSource();
 	    dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:satya");
+	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
 	    dataSource.setUsername("SYSTEM");
 	    dataSource.setPassword("#Praveen123");
 	    System.out.println("--Data source created-----");

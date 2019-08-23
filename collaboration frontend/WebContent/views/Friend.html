@@ -13,14 +13,14 @@
 <div class="row text-center text-lg-eft">
 <div ng-repeat="friend in friendList" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 <div ng-show="friend.username==currentUser.username">
-<img src="https://localhost:8036/TeamCollMiddleware/getImage/{{friend.friendusername}}" class="img-circle" width="100" height="100">
+<img src="https://localhost:8036/middleware/getImage/{{friend.friendusername}}" class="img-circle" width="100" height="100">
 <p>
 <strong>{{friend.friendusername}}</strong>
 <input type="button"value="Unfriend" ng-click="unfriend(friend.friendId)" class="btn btn-danger"/>
 </p>
 </div>
 <div ng-show="friend.friendusername==currentUser.username">
-<img src="http://localhost:8036/TeamCollMiddleware/getImage/{{friend.username}}" class="img-circle" width="100" height="100">
+<img src="http://localhost:8036/middleware/getImage/{{friend.username}}" class="img-circle" width="100" height="100">
 <p>
 <strong>{{friend.username}}</strong>
 <input type="button" value="unfriend" ng-click="unfriend(friend.friendId)" class="btn btn-danger"/>
@@ -36,7 +36,7 @@
 <div ng-repeat="friend in pendingFriendList" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 
 <div ng-show="friend.friendusername==currentUser.username">
-<img src="http://localhost:8036/EduCollaborationMiddleWare/get Image/{{friend.username}}" class="img-circle" width="100" height="100">
+<img src="http://localhost:8036/middleWare/get Image/{{friend.username}}" class="img-circle" width="100" height="100">
 <p>
 <strong>{{friend.username}}</strong>
 <input type="button" value="Accept" ng-click="accept(friend.friendId)"class="btn btn-success"/>
