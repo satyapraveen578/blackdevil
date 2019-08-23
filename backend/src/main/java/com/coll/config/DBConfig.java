@@ -18,6 +18,7 @@ import com.coll.model.BlogComment;
 import com.coll.model.Friend;
 import com.coll.model.Job;
 import com.coll.model.Message;
+import com.coll.model.OutputMessage;
 import com.coll.model.ProfilePicture;
 import com.coll.model.UserDetail;
 
@@ -39,8 +40,19 @@ public class DBConfig {
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
 		System.out.println("----Session Factory Object created-----");
-		Class classes[]=new Class[]{UserDetail.class,Job.class,Blog.class,Message.class,Notification.class,BlogComment.class,ProfilePicture.class,Friend.class};
-	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
+		//Class classes[]=new Class[]{UserDetail.class,Job.class,Blog.class,Message.class,Notification.class,BlogComment.class,ProfilePicture.class,Friend.class};//
+		lsf.addAnnotatedClass(Blog.class);
+		lsf.addAnnotatedClass(BlogComment.class);
+		lsf.addAnnotatedClass(Friend.class);
+		lsf.addAnnotatedClass(Job.class);
+		lsf.addAnnotatedClass(Message.class);
+		lsf.addAnnotatedClass(OutputMessage.class);
+		lsf.addAnnotatedClass(ProfilePicture.class);
+		lsf.addAnnotatedClass(UserDetail.class);
+		return lsf.buildSessionFactory();
+		
+		
+		
 	}
 	@Bean
 	public DataSource getDataSource() {
